@@ -15,3 +15,9 @@ $ sudo apt install postgresql postgresql-contrib libpq-dev python3-dev
 </pre>
 
 postgresq
+
+```ruby
+def hello
+  puts 'Hello world'
+end
+```
