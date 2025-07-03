@@ -18,3 +18,5 @@ def hello
   puts 'Hello world'
 end
 ```
+
+<pre class="highlight"><code class="language-bash">...</code></pre>
