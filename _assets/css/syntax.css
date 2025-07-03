@@ -11,8 +11,8 @@
 .highlight .k { color: #66d9ef }       /* Keyword */
 .highlight .o { color: #f92672 }       /* Operator */
 .highlight .cm { color: #75715e }      /* Comment.Multiline */
-.highlight .cp { color: #f8f8f2 }      /* Comment.Preproc */
 .highlight .cs { color: #75715e }      /* Comment.Single */
+.highlight .cp { color: #f8f8f2 }      /* Comment.Preproc */
 .highlight .gd { color: #f92672 }      /* Deleted */
 .highlight .ge { font-style: italic }
 .highlight .gh { color: #66d9ef; font-weight: bold }

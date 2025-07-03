@@ -6,13 +6,10 @@ categories: database, rdms, relational database
 ---
 
 Installing prerequisites
-<pre>
-```
-bash 
+```bash 
 $ sudo apt update
 $ sudo apt install postgresql postgresql-contrib libpq-dev python3-dev
 ```
-</pre>
 
 postgresq
 
