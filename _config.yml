@@ -5,7 +5,7 @@ description: >-
   Lessons, thoughts, and instructions on systems and software.
 baseurl: "" 
 url: "https://couziii.github.io"
-theme: mini
+theme: minima
 headline: ""
 res: false
 
