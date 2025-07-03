@@ -1,9 +1,9 @@
 title: My Dev Blog
 author: Courage Räsänen
 email: couragerasanen@gmail.com
-description: >- 
-  Lessons, thoughts, and instructions on systems and software.
 baseurl: "" 
 url: "https://couziii.github.io"
 theme: minima
+res: false
+
 
