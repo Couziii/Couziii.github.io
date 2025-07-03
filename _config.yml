@@ -8,5 +8,8 @@ url: "https://couziii.github.io"
 theme: minima
 headline: ""
 res: false
-
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
 
