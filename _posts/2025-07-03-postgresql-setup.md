@@ -23,3 +23,9 @@ end
 $ sudo apt update
 $ sudo apt install postgresql postgresql-contrib libpq-dev python3-dev
 </code></pre>
+
+<div class="comment-box">
+  This section explains how the Bash command works. <br>
+  `sudo apt update` refreshes your package index.
+</div>
+

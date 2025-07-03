@@ -1,4 +1,17 @@
+.comment-box {
+  background: #1e1e1e;
+  color: #6a9955;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9em;
+  padding: 1em;
+  border-left: 4px solid #6a9955;
+  margin: 1.5em 0;
+  border-radius: 6px;
+}
+
+
 .highlight table td { padding: 5px; }
+
 .highlight table pre { margin: 0; }
 .highlight .gh {
   color: #999999;
