@@ -29,3 +29,5 @@ $ sudo apt install postgresql postgresql-contrib libpq-dev python3-dev
   `sudo apt update` refreshes your package index.
 </div>
 
+  This section explains how the Bash command works. <br>
+  `sudo apt update` refreshes your package index.
