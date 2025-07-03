@@ -19,4 +19,7 @@ def hello
 end
 ```
 
-<pre class="highlight"><code class="language-bash">...</code></pre>
+<pre class="highlight"><code class="language-bash">
+$ sudo apt update
+$ sudo apt install postgresql postgresql-contrib libpq-dev python3-dev
+</code></pre>
