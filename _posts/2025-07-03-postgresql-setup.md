@@ -6,41 +6,54 @@ categories: database, rdms, relational database
 ---
 
 
-1. What is PostgreSQL?
-- Is an open-source relational database. 
--Strengths:
-| ACID                 | Requirements                                        |
-| -------------------- | --------------------------------------------------- |
-| **Atomicity**        | A transaction includes every step, or nothing.      |
-| **Consistency**      | A transaction moves the database from one valid state to another, preserving all rules and constraints. E.g., Can't add an order to a db if productID doesn't exist.     |
-| **Isolation**        | Concurrent transactions don't interfere with each other. The transactions behave as though they run on after another.           |
-| **Durability**       | Once a transaction is committed, is persists, even in case of a system crash or power failure.                      |
+## 1. What is PostgreSQL?
 
+PostgreSQL is an open-source relational database.
 
-> Custom - Extensibility -> supports custom data types, functions and extension (POSTGIS, GIS)
-> Concurrency - Uses multi-version concurrency control (MVCC)
-> Analytics - Advanced SQL querying
-- *Weaknesses
-> Performance tuning complexity - Requires tuning of parameters work_mem. shared_buffers and indexing strategies
-> Write-heavy workloads - lag under massive. high frequency write operations (logging or IoT), especially when compared to nosql 
-> Complext replication/scaling 
+### Strengths:
 
+#### ACID Compliance
 
-2.Setup PostgreSQL
+| ACID Property        | Description                                                                                           |
+|----------------------|-------------------------------------------------------------------------------------------------------|
+| **Atomicity**         | A transaction includes every step, or nothing at all.                                                 |
+| **Consistency**       | A transaction moves the database from one valid state to another, preserving all rules and constraints. <br>_E.g., can't add an order if `product_id` doesn't exist._ |
+| **Isolation**         | Concurrent transactions don't interfere with each other. They behave as though run one after another. |
+| **Durability**        | Once a transaction is committed, it persists—even in a crash or power failure.                        |
 
-A. Installing prerequisites
-- postgresql-contrib -(optional) additional postgres tools (pg_stat_statements)
-- libpq-dev, python3-dev - postgres dev libraries for compiling extensions (used by Django and psycopg2)
+#### Other Strengths
+> **Custom / Extensibility** – Supports custom data types, functions, and extensions like **PostGIS** for geospatial data.  
+> **Concurrency** – Uses Multi-Version Concurrency Control (**MVCC**) for efficient parallel transactions.  
+> **Analytics** – Advanced SQL querying features such as window functions, CTEs, and full-text search.
+
+---
+
+### Weaknesses:
+
+> **Performance tuning complexity** – Requires tuning of parameters like `work_mem`, `shared_buffers`, and proper indexing.  
+> **Write-heavy workloads** – May lag under massive, high-frequency write operations (e.g., logging, IoT) compared to NoSQL solutions.  
+> **Complex replication/scaling** – Sharding and horizontal scaling can be more complex than some alternatives.
+
+## 2. Setup PostgreSQL
+
+### A. Installing Prerequisites
+
+Install PostgreSQL along with optional and development tools:
+
+- `postgresql-contrib` – *(Optional)* Additional PostgreSQL tools like `pg_stat_statements`.
+- `libpq-dev`, `python3-dev` – PostgreSQL development libraries used by tools like **Django** and **psycopg2**.
+
 ```bash
 $ sudo apt update
 $ sudo apt install postgresql postgresql-contrib libpq-dev python3-dev
 ```
-B. Start Posgres shell as postgres user
+
+### B. Start Posgres shell as postgres user
 ```bash
 $ sudo -u postgres psql
 ```
 
-C. Create user and database
+### C. Create user and database
 ```sql
 CREATE USER user WITH PASSWORD 'mypassword';
 CREATE DATABASE mydb OWNER myuser;
@@ -60,7 +73,7 @@ GRANT ALL PRIVILEGES ON DATABASE mydb TO myuser;
 ```
 
 
-3. Create Schemas and grant schema-level permissions
+## 3. Create Schemas and grant schema-level permissions
 - Postgres creates a default public schema
 ```sql
 CREATE SCHEMA myschema AUTHORIZATION myuser;
@@ -71,14 +84,14 @@ GRANT ALL PRIVILEGES ON ALL TABlES IN SCHEMA myschema TO myuser;
 ALTER USER myuser SET search_path = myschma, "$user", public;
 ```
 
-4. Connect with Django
-A. Install Python Adapter
+## 4. Connect with Django
+### A. Install Python Adapter
 - Installs the PostgreSQL driver for Python/Django (used in DATABASES settings)
 ```bash
 $ pip install psycopg2-binary
 ```
 
-B. Configure settings.py
+### B. Configure settings.py
 ```python
 DATABASES = {
   'default': {
@@ -93,13 +106,13 @@ DATABASES = {
 ```
 
 5. Connect with Node,js
-A. Install Python Adapter
+### A. Install Python Adapter
 - Installs the 'pg' library which allows you to connect and query PostgreSQL from Node.js
 ```bash
 $ npm install pg
 ```
 
-B. Configure settings.py
+### B. Configure settings.py
 ```JavaScript
 const { Client } = require('pg');
 
