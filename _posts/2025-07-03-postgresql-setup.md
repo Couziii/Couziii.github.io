@@ -8,12 +8,14 @@ categories: database, rdms, relational database
 
 1. What is PostgreSQL?
 - Is an open-source relational database. 
-- *Strengths:
-> ACID - Data integrity and reliability for transactions
->> Atomicity - A transaction includes every step, or nothing. 
->> Consistency - A transaction moves the database from one valid state to another, preserving all rules and constraints. E.g., Can't add an order to a db if productID doesn't exist. 
->> Isolation - Concurrent transactions don't interfere with each other. The transactions behave as though they run on after another.
->> Durability - Once a transaction is committed, is persists, even in case of a system crash or power failure. 
+-Strengths:
+| ACID                 | Requirements                                        |
+| -------------------- | --------------------------------------------------- |
+| **Atomicity**        | A transaction includes every step, or nothing.      |
+| **Consistency**      | A transaction moves the database from one valid state to another, preserving all rules and constraints. E.g., Can't add an order to a db if productID doesn't exist.     |
+| **Isolation**        | Concurrent transactions don't interfere with each other. The transactions behave as though they run on after another.           |
+| **Durability**       | Once a transaction is committed, is persists, even in case of a system crash or power failure.                      |
+
 
 > Custom - Extensibility -> supports custom data types, functions and extension (POSTGIS, GIS)
 > Concurrency - Uses multi-version concurrency control (MVCC)
@@ -24,7 +26,7 @@ categories: database, rdms, relational database
 > Complext replication/scaling 
 
 
-2. *Setup PostgreSQL
+2.Setup PostgreSQL
 
 A. Installing prerequisites
 - postgresql-contrib -(optional) additional postgres tools (pg_stat_statements)
