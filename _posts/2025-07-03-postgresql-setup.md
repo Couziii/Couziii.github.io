@@ -54,7 +54,7 @@ $ sudo -u postgres psql
 ```
 
 ### C. Create user and database
-```sql
+```python
 CREATE USER user WITH PASSWORD 'mypassword';
 CREATE DATABASE mydb OWNER myuser;
 
@@ -75,7 +75,7 @@ GRANT ALL PRIVILEGES ON DATABASE mydb TO myuser;
 
 ## 3. Create Schemas and grant schema-level permissions
 - Postgres creates a default public schema
-```sql
+```python
 CREATE SCHEMA myschema AUTHORIZATION myuser;
 GRANT USAGE ON SCHEMA myschema TO myuser;
 GRANT ALL PRIVILEGES ON ALL TABlES IN SCHEMA myschema TO myuser;
